@@ -84,4 +84,9 @@ public class Tarefas {
         return tarefa.getPriority();
     }
 
+
+    public void removerTarefa(int index) {
+       listaDeTarefas.remove(index);
+    }
+
 }
