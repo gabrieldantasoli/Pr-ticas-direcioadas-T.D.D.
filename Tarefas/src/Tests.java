@@ -53,7 +53,7 @@ public class Tests {
         tarefas.adicionaTarefa(tarefa1);
         tarefas.adicionaTarefa(tarefa2);
         tarefas.removerTarefa(0);
-        assertEquals("Descrição", tarefas.getTarefaTitle(0));
+        assertEquals("Título", tarefas.getTarefaTitle(0));
     }
 
 }
