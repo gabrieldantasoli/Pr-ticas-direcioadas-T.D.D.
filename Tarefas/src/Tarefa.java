@@ -17,4 +17,23 @@ public class Tarefa {
 	public String getTitle() {
 		return (this.titulo);
 	}
+
+    public void set(String title, String descripton, LocalDate deadLine, PRIORIDADE_ENUM priority) {
+        this.titulo = title;
+        this.descricao = descripton;
+        this.vencimento = deadLine;
+        this.prioridade = priority;
+    }
+
+    public String getDescription() {
+        return this.descricao;
+    }
+
+    public Object getDeadLine() {
+        return this.vencimento;
+    }
+
+    public Object getPriority() {
+        return this.prioridade;
+    }
 }
