@@ -1,8 +1,22 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Tarefas {
 
+    private List listaDeTarefas;
+
+
+    public Tarefas() {
+        this.listaDeTarefas = new ArrayList<>();
+    }
+
+
     public boolean isEmpty() {
-        return true;
+        boolean retorno = false;
+        if (listaDeTarefas.isEmpty()) {
+            retorno = true;
+        }
+        return retorno;
     }
 
 }
