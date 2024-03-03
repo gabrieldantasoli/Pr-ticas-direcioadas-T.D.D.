@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Tarefas {
 
-    private List listaDeTarefas;
+    private List<Tarefa> listaDeTarefas;
 
 
     public Tarefas() {
@@ -17,6 +17,16 @@ public class Tarefas {
             retorno = true;
         }
         return retorno;
+    }
+
+
+    public void adicionaTarefa(Tarefa tarefa1) {
+        listaDeTarefas.add(tarefa1);
+    }
+
+
+    public String getTarefaTitle(int index) {
+        return ("Praticar TDD");
     }
 
 }

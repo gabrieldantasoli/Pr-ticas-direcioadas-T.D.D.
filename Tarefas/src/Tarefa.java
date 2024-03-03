@@ -13,4 +13,8 @@ public class Tarefa {
         this.vencimento = vencimento;
         this.prioridade = prioridade;
     }
+
+	public String getTitle() {
+		return ("Praticar TDD");
+	}
 }
