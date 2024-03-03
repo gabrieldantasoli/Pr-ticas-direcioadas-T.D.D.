@@ -66,7 +66,7 @@ public class Tests {
         tarefas.adicionaTarefa(tarefa2);
         tarefas.adicionaTarefa(tarefa3);
 
-        ArrayList<Tarefa> tarefasList = tarefas.getTarefas();
+        List<Tarefa> tarefasList = tarefas.getTarefas();
         assertEquals("Título 3", tarefasList.get(0).getTitle()); // Baixa
         assertEquals("Título 2", tarefasList.get(1).getTitle()); // Média
         assertEquals("Título 1", tarefasList.get(2).getTitle()); // Alta
