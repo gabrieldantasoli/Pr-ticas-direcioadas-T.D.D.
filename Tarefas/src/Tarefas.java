@@ -29,23 +29,14 @@ public class Tarefas {
 
 
     public String getTarefaTitle(int index) {
-        String retorno = "";
-        try {
-            retorno = listaDeTarefas.get(index).getTitle();
-        } catch (IndexOutOfBoundsException e) {
-            throw new IndexOutOfBoundsException("tarefa inexistente");
-        } 
-        return retorno;
+        Tarefa tarefa = this.getTarefa(index);
+
+        return tarefa.getTitle();
     }
 
 
     public void atualizarTarefa(int index, String title, String descricao, LocalDate vencimento, PRIORIDADE_ENUM prioridade) {
-        Tarefa tarefa = null;
-        try {
-            tarefa = listaDeTarefas.get(index);
-        } catch (IndexOutOfBoundsException e) {
-            throw new IndexOutOfBoundsException("tarefa inexistente");
-        }
+        Tarefa tarefa = this.getTarefa(index);
 
         tarefa.set(title, descricao, vencimento, prioridade);
         
@@ -54,36 +45,21 @@ public class Tarefas {
 
 
     public String getTarefaDescription(int index) {
-        Tarefa tarefa = null;
-        try {
-            tarefa = listaDeTarefas.get(index);
-        } catch (IndexOutOfBoundsException e) {
-            throw new IndexOutOfBoundsException("tarefa inexistente");
-        }
+        Tarefa tarefa = this.getTarefa(index);
 
         return tarefa.getDescription();
     }
 
 
     public Object getTarefaDeadLine(int index) {
-        Tarefa tarefa = null;
-        try {
-            tarefa = listaDeTarefas.get(index);
-        } catch (IndexOutOfBoundsException e) {
-            throw new IndexOutOfBoundsException("tarefa inexistente");
-        }
+        Tarefa tarefa = this.getTarefa(index);
 
         return tarefa.getDeadLine();
     }
 
 
     public Object getTarefaPriority(int index) {
-        Tarefa tarefa = null;
-        try {
-            tarefa = listaDeTarefas.get(index);
-        } catch (IndexOutOfBoundsException e) {
-            throw new IndexOutOfBoundsException("tarefa inexistente");
-        }
+        Tarefa tarefa = this.getTarefa(index);
 
         return tarefa.getPriority();
     }
@@ -96,6 +72,17 @@ public class Tarefas {
 
     public List<Tarefa> getTarefas() {
         return this.listaDeTarefas;
+    }
+
+    public Tarefa getTarefa(int index) {
+        Tarefa tarefa = null;
+        try {
+            tarefa = listaDeTarefas.get(index);
+        } catch (IndexOutOfBoundsException e) {
+            throw new IndexOutOfBoundsException("tarefa inexistente");
+        }
+
+        return tarefa;
     }
 
 }
