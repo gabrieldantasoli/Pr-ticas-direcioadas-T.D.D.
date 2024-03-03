@@ -15,6 +15,6 @@ public class Tarefa {
     }
 
 	public String getTitle() {
-		return ("Praticar TDD");
+		return (this.titulo);
 	}
 }

@@ -26,7 +26,9 @@ public class Tarefas {
 
 
     public String getTarefaTitle(int index) {
-        return ("Praticar TDD");
+        String retorno = "";
+        retorno = listaDeTarefas.get(index).getTitle();
+        return retorno;
     }
 
 }
