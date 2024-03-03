@@ -37,7 +37,7 @@ public class Tests {
 
     @Test
     public void updateTaskTest() {
-        tarefas.atualizarTarefa("Novo Título", "Nova Descrição", LocalDate.now().plusDays(1), PRIORIDADE_ENUM.MEDIA);
+        tarefas.atualizarTarefa(0, "Novo Título", "Nova Descrição", LocalDate.now().plusDays(1), PRIORIDADE_ENUM.MEDIA);
         assertEquals("Novo Título", tarefas.getTarefaTitle(0));
         assertEquals("Nova Descrição", tarefas.getTarefaDescription(0));
         assertEquals(LocalDate.now().plusDays(1), tarefas.getTarefaDeadLine(0));
