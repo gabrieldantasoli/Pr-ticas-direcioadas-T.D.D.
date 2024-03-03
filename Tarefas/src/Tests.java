@@ -9,7 +9,7 @@ public class Tests {
 
     @Before
     public void setUp() {
-        Tarefas tarefas = new Tarefas();
+        tarefas = new Tarefas();
     }
 
     @Test
