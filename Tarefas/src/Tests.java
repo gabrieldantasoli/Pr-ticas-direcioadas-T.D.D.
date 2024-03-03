@@ -34,4 +34,13 @@ public class Tests {
         IndexOutOfBoundsException exception = assertThrows(IndexOutOfBoundsException.class, () -> {tarefas.getTarefaTitle(10);});
         assertTrue(exception.getMessage().contains("tarefa inexistente"));
     }
+
+    @Test
+    public void updateTaskTest() {
+        tarefas.atualizarTarefa("Novo Título", "Nova Descrição", LocalDate.now().plusDays(1), PRIORIDADE_ENUM.MEDIA);
+        assertEquals("Novo Título", tarefas.getTarefaTitle(0));
+        assertEquals("Nova Descrição", tarefas.getTarefaDescription(0));
+        assertEquals(LocalDate.now().plusDays(1), tarefas.getTarefaDeadLine(0));
+        assertEquals(PRIORIDADE_ENUM.MEDIA, tarefas.getTarefaPriority(0));
+    }
 }
