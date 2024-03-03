@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
@@ -26,5 +27,11 @@ public class Tests {
     public void addTaskTest() {
         tarefas.adicionaTarefa(tarefa1);
         assertEquals(tarefa1.getTitle(), tarefas.getTarefaTitle(0));
+    }
+
+    @Test
+    public void getTaskIndexOutOfBoundsTest() {
+        IndexOutOfBoundsException exception = assertThrows(IndexOutOfBoundsException.class, () -> {tarefas.getTarefaTitle(10);});
+        assertTrue(exception.getMessage().contains("tarefa inexistente"));
     }
 }
