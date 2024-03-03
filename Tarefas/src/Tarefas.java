@@ -27,7 +27,11 @@ public class Tarefas {
 
     public String getTarefaTitle(int index) {
         String retorno = "";
-        retorno = listaDeTarefas.get(index).getTitle();
+        try {
+            retorno = listaDeTarefas.get(index).getTitle();
+        } catch (IndexOutOfBoundsException e) {
+            throw new IndexOutOfBoundsException("tarefa inexistente");
+        } 
         return retorno;
     }
 
