@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Tarefa {
+public class Tarefa implements Comparable<Tarefa>{
 
     private String titulo;
     private String descricao;
@@ -29,11 +29,36 @@ public class Tarefa {
         return this.descricao;
     }
 
-    public Object getDeadLine() {
+    public LocalDate getDeadLine() {
         return this.vencimento;
     }
 
-    public Object getPriority() {
+    public PRIORIDADE_ENUM getPriority() {
         return this.prioridade;
+    }
+
+    @Override
+    public int compareTo(Tarefa outra) {
+        int retorno = 2;
+
+        int comparaVencimento = this.vencimento.compareTo(outra.getDeadLine());
+
+        if (comparaVencimento != 0) {
+            retorno = comparaVencimento;
+        }
+
+        if (this.prioridade.equals(outra.getPriority())) {
+            retorno = 0;
+        } else if (this.prioridade.equals(PRIORIDADE_ENUM.ALTA)) {
+            retorno = -1;
+        } else if (outra.getPriority().equals(PRIORIDADE_ENUM.ALTA)) {
+            retorno = 1;
+        } else if (this.prioridade.equals(PRIORIDADE_ENUM.MEDIA)) {
+            retorno = -1;
+        } else {
+            retorno = 1;
+        }
+
+        return retorno;
     }
 }

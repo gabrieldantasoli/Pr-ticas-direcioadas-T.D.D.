@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Tarefas {
@@ -23,6 +24,7 @@ public class Tarefas {
 
     public void adicionaTarefa(Tarefa tarefa1) {
         listaDeTarefas.add(tarefa1);
+        Collections.sort(listaDeTarefas);
     }
 
 
@@ -46,6 +48,8 @@ public class Tarefas {
         }
 
         tarefa.set(title, descricao, vencimento, prioridade);
+        
+        Collections.sort(listaDeTarefas);
     }
 
 
@@ -87,6 +91,11 @@ public class Tarefas {
 
     public void removerTarefa(int index) {
        listaDeTarefas.remove(index);
+    }
+
+
+    public List<Tarefa> getTarefas() {
+        return this.listaDeTarefas;
     }
 
 }
