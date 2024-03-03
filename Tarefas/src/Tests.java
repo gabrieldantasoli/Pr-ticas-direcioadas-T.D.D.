@@ -25,6 +25,6 @@ public class Tests {
     @Test
     public void addTaskTest() {
         tarefas.adicionaTarefa(tarefa1);
-        assertEquals(tarefa1, tarefas.getTarefaTitle(0));
+        assertEquals(tarefa1.getTitle(), tarefas.getTarefaTitle(0));
     }
 }
