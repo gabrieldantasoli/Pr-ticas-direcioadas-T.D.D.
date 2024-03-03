@@ -12,11 +12,13 @@ public class Tests {
 
     private Tarefas tarefas;
     private Tarefa tarefa1;
+    private Tarefa tarefa2;
 
     @Before
     public void setUp() {
         tarefas = new Tarefas();
         tarefa1 = new Tarefa("Praticar TDD", "Implementar um gerenciador de tarefas usando TDD", LocalDate.now().plusDays(5), PRIORIDADE_ENUM.ALTA);
+        tarefa2 = new Tarefa("Título", "Descrição", LocalDate.now().plusDays(10), PRIORIDADE_ENUM.BAIXA);
     }
 
     @Test
@@ -45,4 +47,13 @@ public class Tests {
         assertEquals(LocalDate.now().plusDays(1), tarefas.getTarefaDeadLine(0));
         assertEquals(PRIORIDADE_ENUM.MEDIA, tarefas.getTarefaPriority(0));
     }
+
+    @Test
+    public void deleteTaskTest() {
+        tarefas.adicionaTarefa(tarefa1);
+        tarefas.adicionaTarefa(tarefa2);
+        tarefas.removerTarefa(0);
+        assertEquals("Descrição", tarefas.getTarefaTitle(0));
+    }
+
 }
