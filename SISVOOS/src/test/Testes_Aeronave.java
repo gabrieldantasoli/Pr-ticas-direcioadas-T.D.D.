@@ -9,7 +9,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AeronaveTest {
+public class Test_Aeronave {
 
     private AeronaveController aeronaveController;
     private AeronaveRepository aeronaveRepository;
